@@ -121,6 +121,7 @@ In the following examples we will be showing just the contents of `main` functio
 You can modify control properties and the UI will be updated on the next `page.update()`:
 
 ```python
+import time
 t = ft.Text()
 page.add(t) # it's a shortcut for page.controls.append(t) and then page.update()
 
@@ -156,6 +157,7 @@ page.add(
 `page.update()` is smart enough to send only the changes made since its last call, so you can add a couple of new controls to the page, remove some of them, change other controls' properties and then call `page.update()` to do a batched update, for example:
 
 ```python
+from time import sleep
 for i in range(10):
     page.controls.append(ft.Text(f"Line {i}"))
     if i > 4:
